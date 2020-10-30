@@ -1,0 +1,79 @@
+{% extends 'bootstrap/base.html' %}
+{% block content %}
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+<body>
+<!-- Navigation bar -->
+    <nav class="navbar navbar-dark bg-dark">
+  <!-- Navbar content -->
+        <a class="navbar-brand" href="{{ url_for('home')}}">Daisy E-Learning Platform</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link active" href="{{ url_for('home')}}">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-item nav-link" href="{{ url_for('signup')}}">Sign Up</a>
+              <a class="nav-item nav-link" href="{{ url_for('login')}}">Sign In</a>
+              <a class="nav-item nav-link disabled" href="#">Admin Login</a>
+            </div>
+          </div>
+    </nav>
+  <div class="container">
+    <div class="row">
+      <main class="col-sm-10">
+        <form action="{{ url_for('add_record') }}" method="POST">
+          <div class="col-md-4 mb-3">
+            <label for="validationDefault01">Last name</label>
+            <input type="text" class="form-control" id="validationDefault01" placeholder="Last name" name="last_name" required>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="validationDefault02">First name</label>
+            <input type="text" class="form-control" id="validationDefault02" placeholder="First name" name="first_name" required>
+          </div>
+          <div class="form-group col-md-4 mb-3">
+            <label for="email">E-mail address</label>
+            <input type="email" id="email" name="email" class="form-control">
+          </div>
+          <div class="form-group col-md-4 mb-3">
+            <label for="phonenumber">Phone Number</label>
+            <input type="tel" id="phonenumber" name="phone_number" class="form-control">
+          </div>
+
+           <div class="col-md-4 mb-3">
+            <label for="validationDefaultUsername">Username</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroupPrepend2">@</span>
+              </div>
+              <input type="text" class="form-control" id="validationDefaultUsername" placeholder="Username" name="username" aria-describedby="inputGroupPrepend2" required>
+            </div>
+          </div>
+          <div class="form-group col-md-4 mb-3">
+            <label for="password-input">Password</label>
+            <input type="password" id="password-input" name="password" class="form-control">
+          </div>
+          <div class="form-group col-md-4 mb-3">
+            <label for="confirm-password">Confirm your password</label>
+            <input type="password" id="confirm-password" class="form-control">
+            <small style="display: none" id="error-message" class="text-danger">Both password fields must match.</small>
+          </div>
+
+          <div class="form-group">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+              <label class="form-check-label" for="invalidCheck2">
+                Agree to terms and conditions
+              </label>
+            </div>
+            <div class="text-center">Already have an account? <a href="{{ url_for('login') }}">Log in</a></div>
+          </div>
+          <button class="btn btn-primary" type="submit">Submit form</button>
+        </form>
+      </main>
+    </div>
+  </div>
+  <script src="/static/js/scripts.js"></script>
+</body>
+{% endblock %}
