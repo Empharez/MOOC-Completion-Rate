@@ -2,6 +2,20 @@
 {% block content %}
     <meta charset="UTF-8">
     <title>Title</title>
+<style type="text/css">
+		.container{
+			margin-top: 8%;
+			width: auto;
+			border: ridge 1.5px white;
+			padding: 20px;
+		}
+		body{
+			background: #0260AA;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, rgba(27, 175, 179, 0.4), #046BA6);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, rgba(27, 175, 179, 0.4), #046BA6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+		}
+	</style>
 
 <body>
 <!-- Navigation bar -->
@@ -15,7 +29,7 @@
             <div class="navbar-nav">
               <a class="nav-item nav-link active" href="{{ url_for('home')}}">Home <span class="sr-only">(current)</span></a>
               <a class="nav-item nav-link" href="{{ url_for('signup')}}">Sign Up</a>
-              <a class="nav-item nav-link" href="{{ url_for('login')}}">Sign In</a>
+              <a class="nav-item nav-link" href="{{ url_for('login')}}">Login</a>
               <a class="nav-item nav-link disabled" href="#">Admin Login</a>
             </div>
           </div>

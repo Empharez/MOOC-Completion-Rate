@@ -91,6 +91,24 @@
 </style>
 </head>
 <body>
+
+ <!-- Navigation bar -->
+    <nav class="navbar navbar-dark bg-dark">
+  <!-- Navbar content -->
+        <a class="navbar-brand" href="{{ url_for('home')}}">Daisy E-Learning Platform</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link active" href="{{ url_for('home')}}">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-item nav-link" href="{{ url_for('signup')}}">Sign Up</a>
+              <a class="nav-item nav-link" href="{{ url_for('login')}}">Sign In</a>
+              <a class="nav-item nav-link disabled" href="#">Admin Login</a>
+            </div>
+          </div>
+    </nav>
+
 <div class="login-form">
     <form action="{{ url_for('getinfo') }}" method="POST">
 		<div class="avatar"><i class="material-icons">&#xE7FF;</i></div>
@@ -107,7 +125,7 @@
         </div>
         <input type="submit" class="btn btn-primary btn-block btn-lg" value="Login">
     </form>
-    <p class="text-center small">Don't have an account? <a href="{{ url_for('signup') }}">Register here!</a></p>
+    <p class="text-center small">Don't have an account? <a href="{{ url_for('signup') }}">Sign Up here!</a></p>
 </div>
 
 <!-- footer Section -->
