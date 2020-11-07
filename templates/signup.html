@@ -8,6 +8,7 @@
 			width: auto;
 			border: ridge 1.5px white;
 			padding: 20px;
+			align: center;
 		}
 		body{
 			background: #0260AA;  /* fallback for old browsers */
@@ -30,7 +31,7 @@
               <a class="nav-item nav-link active" href="{{ url_for('home')}}">Home <span class="sr-only">(current)</span></a>
               <a class="nav-item nav-link" href="{{ url_for('signup')}}">Sign Up</a>
               <a class="nav-item nav-link" href="{{ url_for('login')}}">Login</a>
-              <a class="nav-item nav-link disabled" href="#">Admin Login</a>
+              <a class="nav-item nav-link disabled" href="{{ url_for('admin')}}">Admin Login</a>
             </div>
           </div>
     </nav>

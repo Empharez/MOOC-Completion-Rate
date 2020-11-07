@@ -1,0 +1,135 @@
+{% extends 'bootstrap/base.html' %}
+{% block content %}
+<title>Admin Dashboard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {font-family: "Lato", sans-serif;}
+
+.sidebar {
+  height: 100%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 16px;
+}
+
+.sidebar a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #ffffff;
+  display: block;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 160px; /* Same as the width of the sidenav */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+</style>
+
+<body>
+
+    <div class="sidebar">
+      <a href="#home"><i class="fa fa-fw fa-home"></i> Home</a>
+      <a href="#users"><i class="fa fa-fw fa-user"></i> Users</a>
+      <a href="#analytics"><i class="fa fa-line-chart"></i> Analytics</a>
+      <a href="{{ url_for('home') }}"><i class="fa fa-fw fa-user"></i> Log Out</a>
+    </div>
+
+    <div class="main">
+        <h2 class="text-center">Welcome Admin <span><i class="fa fa-fw fa-user"></i></span></h2>
+        <h4>Registered Users</h4>
+          <table class="table" id="users">
+            <thead class="thead-dark">
+              <tr>
+                  <th>Last Name</th>
+                  <th>First Name</th>
+                  <th>Email</th>
+                  <th>Phone Number</th>
+                  <th>Username</th>
+                  <th>Password</th>
+              </tr>
+            </thead>
+            <tbody>
+            {% for i in rows %}
+                <tr>
+                    <td>{{ i[0] }}</td>
+                    <td>{{ i[1] }}</td>
+                    <td>{{ i[2] }}</td>
+                    <td>{{ i[3] }}</td>
+                    <td>{{ i[4] }}</td>
+                    <td>{{ i[5] }}</td>
+                </tr>
+            {% endfor %}
+
+            </tbody>
+          </table>
+        <hr/>
+
+        <h4>Course Registration Details and Prediction </h4>
+          <table class="table" id="analytics">
+            <thead class="thead-dark">
+              <tr>
+                  <th>Last Name</th>
+                  <th>First Name</th>
+                  <th>Gender</th>
+                  <th>Age Group</th>
+                  <th>Disability</th>
+                  <th>Highest Education</th>
+                  <th>Phone Number</th>
+                  <th>Email</th>
+                  <th>Street Address</th>
+                  <th>Street Address Line 2</th>
+                  <th>City</th>
+                  <th>State</th>
+                  <th>Zip Code</th>
+                  <th>Country</th>
+                  <th>Course Registration</th>
+                  <th>Number Of Previous Attempts</th>
+                  <th>Prediction</th>
+              </tr>
+            </thead>
+            <tbody>
+            {% for info in data %}
+                <tr>
+                    <td>{{info[0]}}</td>
+                    <td>{{info[1]}}</td>
+                    <td>{{info[2]}}</td>
+                    <td>{{info[3]}}</td>
+                    <td>{{info[4]}}</td>
+                    <td>{{info[5]}}</td>
+                    <td>{{info[6]}}</td>
+                    <td>{{info[7]}}</td>
+                    <td>{{info[8]}}</td>
+                    <td>{{info[9]}}</td>
+                    <td>{{info[10]}}</td>
+                    <td>{{info[11]}}</td>
+                    <td>{{info[12]}}</td>
+                    <td>{{info[13]}}</td>
+                    <td>{{info[14]}}</td>
+                    <td>{{info[15]}}</td>
+                    <td>{{info[16]}}</td>
+                </tr>
+            {% endfor %}
+
+            </tbody>
+          </table>
+    </div>
+<div class="main-content">
+</div>
+</body>
+{% endblock %}
