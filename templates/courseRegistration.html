@@ -206,25 +206,25 @@
         <div class="item">
           <p>Bio-Data</p>
           <div class="name-item">
-            <input type="text" name="first_name" placeholder="First"/>
-            <input type="text" name="last_name" placeholder="Last"/>
-              <select name="gender">
+            <input type="text" name="first_name" placeholder="First" required="required"/>
+            <input type="text" name="last_name" placeholder="Last" required="required"/>
+              <select name="gender" required="required">
                 <option disabled selected>--Select Gender--</option>
                 <option value="1">Male</option>
                 <option value="2">Female</option>
               </select>
-              <select name="age_group">
+              <select name="age_group" required="required">
                 <option disabled selected>--Select Age Group--</option>
                 <option value="1">0-35</option>
                 <option value="2">35-55</option>
                   <option value="3">55 and above</option>
               </select>
-              <select name="disability">
+              <select name="disability" required="required">
                 <option disabled selected>--Disability--</option>
                 <option value="2">Yes</option>
                 <option value="1">No</option>
               </select>
-              <select name="highest_education">
+              <select name="highest_education" required="required">
                 <option disabled selected>--Highest Education--</option>
                 <option value="1">No Formal Education</option>
                 <option value="2">Lower Than A Level (Primary School and SSCE)</option>
@@ -238,21 +238,21 @@
 
         <div class="item">
           <p>Phone</p>
-          <input type="text" name="phone_number"/>
+          <input type="text" name="phone_number" required="required"/>
         </div>
 
         <div class="item">
           <p>Email</p>
-          <input type="text" name="email"/>
+          <input type="text" name="email" required="required"/>
         </div>
 
         <div class="item">
           <p>Address</p>
-          <input type="text" name="street_address" placeholder="Street address" />
-          <input type="text" name="street_address_line_2" placeholder="Street address line 2" />
+          <input type="text" name="street_address" placeholder="Street address" required="required"/>
+          <input type="text" name="street_address_line_2" placeholder="Street address line 2" required="required"/>
           <div class="city-item">
-            <input type="text" name="city" placeholder="City" />
-            <select name="state">
+            <input type="text" name="city" placeholder="City" required="required"/>
+            <select name="state" required="required">
                 <option disabled selected>--Select State--</option>
                 <option value="Abia">Abia</option>
                 <option value="Adamawa">Adamawa</option>
@@ -292,8 +292,8 @@
                 <option value="Yobe">Yobe</option>
                 <option value="Zamfara">Zamfara</option>
             </select>
-            <input type="text" name="zip_code" placeholder="Postal / Zip code" />
-            <select name="country">
+            <input type="text" name="zip_code" placeholder="Postal / Zip code" required="required"/>
+            <select name="country" required="required">
                 <option value="  " selected>Country</option>
                 <option value="--">Not Specified</option>
                 <option value="AF">Afghanistan</option>
@@ -540,7 +540,7 @@
         </div>
         <h2>Course Details</h2>
         <div class="item">
-          <select name="course">
+          <select name="course" required="required">
                 <option disabled selected>--Select a Course--</option>
                 <option value="data_science">Data Science</option>
                 <option value="back_end">Back-end Development</option>
@@ -551,7 +551,7 @@
 
         <div class="item">
           <p>Start Date</p>
-          <input type="date" name="bdate"/>
+          <input type="date" name="bdate" required="required"/>
           <i class="fas fa-calendar-alt"></i>
             <select name="num_of_prev_attempts">
                 <option disabled selected>--Number of Previous Attempts--</option>

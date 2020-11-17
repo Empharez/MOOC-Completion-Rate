@@ -1,7 +1,15 @@
 {% extends 'bootstrap/base.html' %}
 {% block content %}
-    <meta charset="UTF-8">
-    <title>Title</title>
+	<title>Recommendation</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" rel="stylesheet">
+    <style rel="stylesheet" type="text/css" media="screen">
+        body {
+            background: #0260AA;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, rgba(27, 175, 179, 0.4), #046BA6);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, rgba(27, 175, 179, 0.4), #046BA6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        }
+    </style>
 <body>
 <!-- Navigation bar -->
     <nav class="navbar navbar-dark bg-dark">
@@ -19,15 +27,27 @@
             </div>
           </div>
     </nav>
-<h2>
-    We'll get back to you as soon as possible
-</h2>
-<div>
-    {% if prediction == 1%}
-    <p>Dropout</p>
-    {% endif %}
-</div>
-    <a href="{{ url_for('home')}}">Logout</a>
+
+<div id="about" class="offset">
+    <div class="container-fluid">
+        <div class="row jumbotron jumbotron-fluid">
+            <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-12 text-center">
+
+                <h2 class="display-4">MOOC Completion Rate Recommendation</h2>
+
+                <p class="lead">The goal of the recommender system is to predict the <em>students</em> who would likely drop out or finish their online courses
+                    based on the student's information such as age, number of previous attempts and other factors.
+                </p>
+            <p class="lead">
+                <a class="btn btn-outline-primary btn-lg" href="{{ url_for('home') }}" role="button">Log Out</a>
+            </p>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+
 
 
 </body>
